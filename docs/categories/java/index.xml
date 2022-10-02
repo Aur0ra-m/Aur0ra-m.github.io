@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - Category - Aur0ra Blog</title>
+        <link>https://aur0ra.cn/categories/java/</link>
+        <description>Java - Category - Aur0ra Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Anonymous@xx.com (Aur0ra)</managingEditor>
+            <webMaster>Anonymous@xx.com (Aur0ra)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 16 May 2022 22:56:41 &#43;0800</lastBuildDate><atom:link href="https://aur0ra.cn/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>jdk原生链分析</title>
+    <link>https://aur0ra.cn/2/</link>
+    <pubDate>Mon, 16 May 2022 22:56:41 &#43;0800</pubDate>
+    <author>Aur0ra</author>
+    <guid>https://aur0ra.cn/2/</guid>
+    <description><![CDATA[作为jdk中目前发现的原生链，还是有必要要分析这个用法的。全文仅限尽可能还原挖掘思路
+ JDK7u21 在很多链中，TemplatesImpl一直发挥着不可或缺的作用，它是位于jdk源码中的一段Gadget:getOutputProperties()-&gt;newTransformer()-&gt;getTransletInstance()-&gt;...
+ templatesImpl利用回顾:
+ 加载对象需要是com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet的实现类 需要设置_name,_bytecodes _tfactory属性在高版本需要设置，jdk7u21中不是必须，看jdk版本而言-》defineTransletClasses   其中只要能触发上述任意一个函数的，都可以完成TemplatesImpl的动态加载字节码功能。
+1. 所以我们看jdk中是否有调用这三个函数?
+还记得sun.reflect.annotation.AnnotationInvocationHandler嘛？这可是java反序列化中的重要角色。而jdk7u21算是对其利用的再挖掘。
+为了简单直接，我把反编译的代码中的var变量替换了自定义变量
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  //AnnotationInvocationHandler.javaprivate Boolean equalsImpl(Object var1) {if (var1 == this) {return true;} else if (!]]></description>
+</item>
+</channel>
+</rss>
