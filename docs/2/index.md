@@ -348,6 +348,7 @@ public class Gadget {
 1. 为什么jdk7u21前的版本中，不是Annotation类照样可以成功运行exp呢？
 
    
+
 ![upload successful](/images/imgs/4.png)
 
    可以看到，这里type已成功赋值为目标Class对象，所以下面return的时候，不影响序列化的结果。
