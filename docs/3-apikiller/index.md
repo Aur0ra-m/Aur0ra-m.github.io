@@ -3,7 +3,7 @@
 
 # APIKiller -- 一款漏洞扫描（神）器
 
-> Github项目直通车：https://github.com/Aur0ra-m/APIKiller
+> Github项目直通车：[APIKiller API Security Tool](https://github.com/Aur0ra-m/APIKiller)
 
 ## 项目背景
 
