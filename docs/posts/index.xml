@@ -4,7 +4,19 @@
         <link>https://aur0ra.cn/posts/</link>
         <description>All Posts | Aur0ra Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Anonymous@xx.com (Aur0ra)</managingEditor>
-            <webMaster>Anonymous@xx.com (Aur0ra)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 14 Feb 2023 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://aur0ra.cn/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Anonymous@xx.com (Aur0ra)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 05 Aug 2023 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://aur0ra.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>黑盒扫描器开发-如何有效去除重复流量</title>
+    <link>https://aur0ra.cn/apikiller-url-duplication/</link>
+    <pubDate>Sat, 05 Aug 2023 08:00:00 &#43;0800</pubDate>
+    <author>Aur0ra</author>
+    <guid>https://aur0ra.cn/apikiller-url-duplication/</guid>
+    <description><![CDATA[背景 在写被动流量扫描时，常会碰到对重复流量扫描的情况。这些重复流量无疑降低了扫描器的有效检测效率，同时还会保存重复的扫描结果， 影响了最终的检出效果。所以在流量正式进入检测引擎前需要设计出一个重复流量过滤器，实现去重的目的。
+重复流量过滤器设计 实现思路：先将请求对象进行标准化处理，将标准化的结果用树结构进行保存。搜索时采用DFS深度优先算法进行搜索，找到了就返回，没找到就递归创建新的节点。同时为了避免长时间运行导致树结构枝条庞大，所以附加了一个轻量级别的GC，对无效节点进行定期回收，有效提高树的稳定性。
+请求标准化 将一个请求进行标准化，得到一个字符串数组：
+ 一般请求GET http://www.baidu.com/index/test &ndash;&gt; [&lsquo;http&rsquo;, &lsquo;get&rsquo;,&lsquo;www.baidu.com&rsquo;,&lsquo;index&rsquo;,&lsquo;test&rsquo;] 。整体按照schema、method、host、all path进行拆分 特殊框架请求GET http://www.baidu.com/? action=list &ndash;&gt;[&lsquo;http&rsquo;, &lsquo;get&rsquo;,&lsquo;www.baidu.com&rsquo;,&lsquo;action{list}'] 。对action 这种进行特殊化解析即可，此种方式对其他类型的参数解析也是相类似的，但需要确定好整体的框架类型，避免无法被有效识别。  节点树构造 首先设置一个root根节点，然后再根据标准化后的请求对象，进行树搜索和树节点创建即可。 实现思路：根据标准化后的数组，对节点树进行DFS 搜索。如果找到了所有的节点，则返回重复标识；如果在某个节点开始就找不到了，那就先对树节点进行递归扩建，扩建完后返回非重复标识。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  func searchTrea(parent *node, normalizedRequest []string, point int) bool {if point == len(normalizedRequest){return true}// 持续递归搜索 for _, childNode := range parent.]]></description>
+</item>
+<item>
     <title>APIKiller -- 一款漏洞扫描（神）器</title>
     <link>https://aur0ra.cn/3-apikiller/</link>
     <pubDate>Tue, 14 Feb 2023 08:00:00 &#43;0800</pubDate>

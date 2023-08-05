@@ -2,12 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://aur0ra.cn/3-apikiller/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://aur0ra.cn/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://aur0ra.cn/categories/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://aur0ra.cn/categories/golang/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://aur0ra.cn/posts/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://aur0ra.cn/categories/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://aur0ra.cn/</loc><lastmod>2023-08-05T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://aur0ra.cn/categories/</loc><lastmod>2023-08-05T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://aur0ra.cn/categories/dast/</loc><lastmod>2023-08-05T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://aur0ra.cn/posts/</loc><lastmod>2023-08-05T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://aur0ra.cn/categories/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91/</loc><lastmod>2023-08-05T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://aur0ra.cn/apikiller-url-duplication/</loc><lastmod>2023-08-05T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://aur0ra.cn/3-apikiller/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://aur0ra.cn/categories/golang/</loc><lastmod>2023-02-14T08:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://aur0ra.cn/1/</loc><lastmod>2022-06-06T22:56:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://aur0ra.cn/categories/java/</loc><lastmod>2022-05-16T22:56:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://aur0ra.cn/2/</loc><lastmod>2022-05-16T22:56:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
