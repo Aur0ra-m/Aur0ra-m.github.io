@@ -36,7 +36,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/aur0ra.cn\/apikiller-url-duplication\/"
-        },"image": ["https:\/\/aur0ra.cn\/images\/avatar.png"],"genre": "posts","wordcount":  114 ,
+        },"image": ["https:\/\/aur0ra.cn\/images\/avatar.png"],"genre": "posts","wordcount":  112 ,
         "url": "https:\/\/aur0ra.cn\/apikiller-url-duplication\/","datePublished": "2023-08-05T08:00:00+08:00","dateModified": "2023-08-05T08:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Aur0ra","logo": "https:\/\/aur0ra.cn\/images\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">黑盒扫描器开发-如何有效去除重复流量</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Aur0ra</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>安全开发</a>&nbsp;<a href="/categories/dast/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>DAST</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-05">2023-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;114 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-05">2023-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;112 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -212,8 +212,14 @@ action=list</strong> &ndash;&gt;[&lsquo;http&rsquo;,
         data-sizes="auto"
         alt="/images/imgs/url_duplication/img.png"
         title="img.png" />
-![img_1.png](/images/imgs/url_duplication
-/img_1.png)
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/imgs/url_duplication/img_1.png"
+        data-srcset="/images/imgs/url_duplication/img_1.png, /images/imgs/url_duplication/img_1.png 1.5x, /images/imgs/url_duplication/img_1.png 2x"
+        data-sizes="auto"
+        alt="/images/imgs/url_duplication/img_1.png"
+        title="img_1.png" />
 可以看到当经过一个GC周期后，当扫描次数到5
 的时候，节点就会被清除，而其他没有到达阈值的节点计数则会+1
 。经测试，最终的整体检索性能还是可以的，非大量流量情况下基本无感知。</p>

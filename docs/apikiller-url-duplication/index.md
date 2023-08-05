@@ -56,8 +56,7 @@ func searchTrea(parent *node, normalizedRequest []string, point int) bool {
 
 # 最终效果
 ![img.png](/images/imgs/url_duplication/img.png)
-![img_1.png](/images/imgs/url_duplication
-/img_1.png)
+![img_1.png](/images/imgs/url_duplication/img_1.png)
 可以看到当经过一个GC周期后，当扫描次数到5
 的时候，节点就会被清除，而其他没有到达阈值的节点计数则会+1
 。经测试，最终的整体检索性能还是可以的，非大量流量情况下基本无感知。
