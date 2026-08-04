@@ -15,7 +15,12 @@
  先将请求对象进行标准化，处理为一个字符串数组 将标准化的结果用树结构进行保存 搜索时采用DFS深度优先算法进行搜索，如果找到了就返回结果；如果没找到，就递归创建新的节点 同时为了避免长时间运行导致树结构枝条庞大，所以附加了一个轻量级的GC, 用于对无效节点进行定期回收，有效提高树的稳定性。  请求标准化 将一个请求进行标准化，得到一个字符串数组：
  一般请求GET http://www.baidu.com/index/test &ndash;&gt; [&lsquo;http&rsquo;, &lsquo;get&rsquo;,&lsquo;www.baidu.com&rsquo;,&lsquo;index&rsquo;,&lsquo;test&rsquo;] 。整体按照schema、method、host、all path进行拆分 特殊框架请求GET http://www.baidu.com/? action=list &ndash;&gt;[&lsquo;http&rsquo;, &lsquo;get&rsquo;,&lsquo;www.baidu.com&rsquo;,&lsquo;action{list}'] 。这里是对action进行特殊化解析为字符串（此种方式对其他框架的参数解析也是相类似的，但需要确定好整体的框架类型，避免无法被有效识别）。  节点树构造 首先设置一个root根节点，然后再根据请求对象进行标准化后得到的字符串数组，对树进行搜索和树节点创建即可。
 实现思路：根据标准化后的数组，对节点树进行DFS搜索。如果找到了所有的节点，则返回重复标识；如果在某个节点开始就找不到了，那就先对树节点进行递归扩建，扩建完后返回非重复标识。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  func searchTree(parent *node, normalizedRequest []string, point int) bool {if point == len(normalizedRequest){return true}// 持续递归搜索 for _, childNode := range parent.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  func searchTree(parent *node, normalizedRequest []string, point int) bool {
+if point == len(normalizedRequest){
+return true
+}
+// 持续递归搜索
+ for _, childNode := range parent.]]></description>
 </item>
 <item>
     <title>APIKiller -- 一款漏洞扫描（神）器</title>
@@ -24,7 +29,7 @@
     <author>Aur0ra</author>
     <guid>https://aur0ra.cn/3-apikiller/</guid>
     <description><![CDATA[APIKiller &ndash; 一款漏洞扫描（神）器  Github项目直通车：APIKiller API Security Tool
- 项目背景 去年有幸进入字节无恒实验室实习，并负责抖音的安全SDLC工作，在期间挖的众多漏洞中发现很多问题都是IDOR这类的越权问题，当时想的就是能不能自动化识别啥的，毕竟一直这样也挺低效的（其实字节是有IDOR相关的DAST工具，只是有些没覆盖到），所以项目名称原本叫IDORKiller。但是最近写着写着，想着索性做成工程化的工具，于是在原有的基础上，进行整体结构上的优化，使其能够保证高效、易拓展的特性，于是就有了现在的APIKiller项目。
+ 项目背景 去年进入字节无恒实验室实习，并负责抖音的安全SDLC工作，在期间挖的众多漏洞中发现很多问题都是IDOR这类的越权问题，当时想的就是能不能自动化识别啥的，毕竟一直这样也挺低效的（其实字节是有IDOR相关的DAST工具，只是有些没覆盖到），所以项目名称原本叫IDORKiller。但是最近写着写着，想着索性做成工程化的工具，于是在原有的基础上，进行整体结构上的优化，使其能够保证高效、易拓展的特性，于是就有了现在的APIKiller项目。
 项目介绍 Feature  支持HTTP/HTTPS流量检测 多来源检测  支持流量监听 支持历史流量回扫[目前只支持burpsuite存储流量]   多功能扫描模块  越权检测模块，高效精准，支持多情景检测  具备多种鉴权姿势的账号设定 多维度、特征化判断引擎   40x bypass 模块  支持常见的架构层的解析不一致导致的风险检测 支持常见后门检测   csrf检测模块  支持token检测 常见的referer、origin检测   【欢迎大家积极提PR】   多功能Filter处理，默认自带多个filter  针对性扫描，例如只对 baidu.com域名进行扫描 去重扫描，提高效率 自动过滤静态文件(js,gif,jpg,png,css,jpeg,xml,img,svg&hellip;)   API 运维  提供简易的API Security运维平台   多方式漏洞发现提醒  Lark飞书 钉钉 &hellip;   对抗常见风控手段  频控   【重磅】以上都可以快速进行拓展&amp;二次开发   由于多处核心组件采用了抽象的方式，所以可以给有需要的使用者进行快速的二次开发（二次开发的文档，后续将会补齐）]]></description>
 </item>
 <item>
